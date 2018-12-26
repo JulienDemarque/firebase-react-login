@@ -51,14 +51,14 @@ class Signin extends Component {
             value={email}
             onChange={this.handleInputChange}
           />
-          <span class="icon is-small is-left">
-            <i class="fas fa-envelope" />
+          <span className="icon is-small is-left">
+            <i className="fas fa-envelope" />
           </span>
-          <span class="icon is-small is-right">
-            <i class="fas fa-exclamation-triangle" />
+          <span className="icon is-small is-right">
+            <i className="fas fa-exclamation-triangle" />
           </span>
 
-          <p class="help is-danger">{textDisplay}</p>
+          <p className="help is-danger">{textDisplay}</p>
         </div>
       );
     } else {
@@ -72,8 +72,8 @@ class Signin extends Component {
             value={email}
             onChange={this.handleInputChange}
           />
-          <span class="icon is-small is-left">
-            <i class="fas fa-envelope" />
+          <span className="icon is-small is-left">
+            <i className="fas fa-envelope" />
           </span>
         </div>
       );
