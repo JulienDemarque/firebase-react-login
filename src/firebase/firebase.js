@@ -1,7 +1,6 @@
 import * as firebase from "firebase";
 require("dotenv").config();
 
-console.log(process.env.REACT_APP_API_KEY);
 var config = {
   apiKey: process.env.REACT_APP_API_KEY,
   authDomain: "expensify-25fdb.firebaseapp.com",
