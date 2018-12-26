@@ -7,7 +7,11 @@ class Signout extends Component {
   }
 
   render() {
-    return <div>sorry to see you go</div>;
+    return (
+      <div className="level">
+        <h5 className="title is-5">sorry to see you go</h5>
+      </div>
+    );
   }
 }
 
