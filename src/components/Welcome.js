@@ -26,7 +26,7 @@ class Welcome extends Component {
   };
   render() {
     return (
-      <div className="level">
+      <div>
         <h2 className="title is-2">Welcome</h2>
         {this.renderTitle()}
       </div>
