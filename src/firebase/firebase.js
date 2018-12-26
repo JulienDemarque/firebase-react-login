@@ -22,7 +22,6 @@ export function signupWithFirebase(email, password, status, callback) {
       // adding the status Teacher or Student on the firebase user
       user
         .updateProfile({
-          email: email,
           displayName: status
         })
         .then(function() {

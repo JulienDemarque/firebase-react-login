@@ -33,14 +33,18 @@ class Index extends Component {
     return (
       <BrowserRouter>
         <App user={this.state.user}>
-          <Route path="/" exact component={Welcome} />
+          <Route
+            path="/"
+            exact
+            render={() => <Welcome user={this.state.user} />}
+          />
           <Route path="/signup" exact component={Signup} />
           <Route path="/signin" exact component={Signin} />
           <Route path="/signout" exact component={Signout} />
           <Route
             path="/dashboard"
             exact
-            render={() => <Dashboard user={this.state.user} hello="hello" />}
+            render={() => <Dashboard user={this.state.user} />}
           />
         </App>
       </BrowserRouter>

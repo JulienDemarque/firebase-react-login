@@ -1,21 +1,58 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "bulma/css/bulma.css";
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { isActive: false };
+  }
+
+  handleClick = () => {
+    this.setState(({ isActive }) => ({ isActive: !isActive }));
+  };
+
   renderLinks() {
     if (this.props.user) {
       return (
         <div>
-          <Link to="/signout">Sign Out</Link>
-          <Link to="/dashboard">Dashboard</Link>
+          <div className="buttons">
+            <NavLink
+              to="/signout"
+              className="button is-light"
+              onClick={this.handleClick}
+            >
+              Sign out
+            </NavLink>
+            <NavLink
+              to="/dashboard"
+              className="button is-primary"
+              onClick={this.handleClick}
+            >
+              <strong>Dashboard</strong>
+            </NavLink>
+          </div>
         </div>
       );
     } else {
       return (
         <div>
-          <Link to="/signup">Sign Up</Link>
-          <Link to="/signin">Sign In</Link>
+          <div className="buttons">
+            <NavLink
+              to="/signup"
+              className="button is-light"
+              onClick={this.handleClick}
+            >
+              Sign Up
+            </NavLink>
+            <NavLink
+              to="/signin"
+              className="button is-primary"
+              onClick={this.handleClick}
+            >
+              Sign In
+            </NavLink>
+          </div>
         </div>
       );
     }
@@ -25,8 +62,11 @@ class Header extends Component {
     return (
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-          <Link to="/">Home</Link>
+          <NavLink className="navbar-item" to="/" onClick={this.handleClick}>
+            Home
+          </NavLink>
           <a
+            onClick={this.handleClick}
             role="button"
             className="navbar-burger burger"
             aria-label="menu"
@@ -38,7 +78,16 @@ class Header extends Component {
             <span aria-hidden="true" />
           </a>
         </div>
-        {this.renderLinks()}
+        <div
+          id="navbarBasicExample"
+          className={
+            this.state.isActive ? "navbar-menu is-active" : "navbar-menu"
+          }
+        >
+          <div className="navbar-end">
+            <div className="navbar-item">{this.renderLinks()}</div>
+          </div>
+        </div>
       </nav>
     );
   }

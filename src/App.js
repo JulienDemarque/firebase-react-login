@@ -1,11 +1,11 @@
 import React from "react";
-import "./App.css";
 //import firebase from "./firebase/firebase";
 import Header from "./components/Header";
+import "bulma/css/bulma.css";
 
 export default ({ children, user }) => {
   return (
-    <div>
+    <div className="container">
       <Header user={user} />
       {children}
     </div>
