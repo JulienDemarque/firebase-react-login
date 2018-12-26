@@ -7,7 +7,7 @@ export default ({ children, user }) => {
   return (
     <div className="container">
       <Header user={user} />
-      {children}
+      <section className="section">{children}</section>
     </div>
   );
 };
